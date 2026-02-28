@@ -4,17 +4,17 @@ Some animations converted from maimai FiNALE.
 
 ## Content
 
-### [Footer](./footer/index.html)
+### [Footer](https://magicalsalt.github.io/maiAnimations/footer/index.html)
 
 The SD animation shown at the bottom of the screen.
 
-Assets have been changed to HD version. [Original low-res version also provided.](./footer_orig/index.html)
+Assets have been changed to HD version. [Original low-res version also provided.](https://magicalsalt.github.io/maiAnimations/footer_orig/index.html)
 
-### [Wait](./wait/index.html)
+### [Wait](https://magicalsalt.github.io/maiAnimations/wait/index.html)
 
 The "Wait a minute" animation on the idle side when playing on 1p mode.
 
-### [Partner](./partner/index.html)
+### [Partner](https://magicalsalt.github.io/maiAnimations/partner/index.html)
 
 Characters shown in game.
 
