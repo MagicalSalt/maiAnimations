@@ -9,8 +9,6 @@
   ],
   "scenes": {
     "select": "assets/scenes/select.json",
-    "select_icon": "assets/scenes/select_icon.json",
-    "select_char": "assets/scenes/select_char.json",
     "chiffon": "assets/scenes/chiffon.json",
     "milk": "assets/scenes/milk.json",
     "otohime": "assets/scenes/otohime.json",
