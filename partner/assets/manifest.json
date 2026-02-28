@@ -1,0 +1,93 @@
+{
+  "partners": [
+    "ras",
+    "chiffon",
+    "salt",
+    "otohime",
+    "shama",
+    "milk"
+  ],
+  "scenes": {
+    "select": "assets/scenes/select.json",
+    "select_icon": "assets/scenes/select_icon.json",
+    "select_char": "assets/scenes/select_char.json",
+    "chiffon": "assets/scenes/chiffon.json",
+    "milk": "assets/scenes/milk.json",
+    "otohime": "assets/scenes/otohime.json",
+    "ras": "assets/scenes/ras.json",
+    "salt": "assets/scenes/salt.json",
+    "shama": "assets/scenes/shama.json"
+  },
+  "icons": {
+    "ras": "assets/icons/ras.png",
+    "chiffon": "assets/icons/chiffon.png",
+    "salt": "assets/icons/salt.png",
+    "otohime": "assets/icons/otohime.png",
+    "shama": "assets/icons/shama.png",
+    "milk": "assets/icons/milk.png",
+    "_shadow": "assets/icons/shadow.png",
+    "_ef_b": "assets/icons/ef_b.png",
+    "_ef_s": "assets/icons/ef_s.png",
+    "_ef_sq": "assets/icons/ef_sq.png"
+  },
+  "layout": {
+    "sceneSize": 1080,
+    "topPos": [
+      540,
+      540
+    ],
+    "underNulPos": [
+      0,
+      134
+    ],
+    "charViewportPos": [
+      -15,
+      -136
+    ],
+    "iconSlots": [
+      {
+        "partner": "ras",
+        "x": -329,
+        "y": 41,
+        "sx": 0.8,
+        "sy": 0.8
+      },
+      {
+        "partner": "chiffon",
+        "x": -194,
+        "y": 18,
+        "sx": 0.8,
+        "sy": 0.8
+      },
+      {
+        "partner": "salt",
+        "x": -61,
+        "y": 0,
+        "sx": 0.8,
+        "sy": 0.8
+      },
+      {
+        "partner": "otohime",
+        "x": 73,
+        "y": 0,
+        "sx": 0.8,
+        "sy": 0.8
+      },
+      {
+        "partner": "shama",
+        "x": 207,
+        "y": 18,
+        "sx": 0.8,
+        "sy": 0.8
+      },
+      {
+        "partner": "milk",
+        "x": 342,
+        "y": 41,
+        "sx": 1,
+        "sy": 1
+      }
+    ],
+    "iconSize": 148
+  }
+}

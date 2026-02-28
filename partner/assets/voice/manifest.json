@@ -1,0 +1,464 @@
+{
+  "raz": {
+    "meeting": [
+      "assets/voice/raz/meeting_1.ogg",
+      "assets/voice/raz/meeting_2.ogg",
+      "assets/voice/raz/meeting_3.ogg"
+    ],
+    "touch": [
+      "assets/voice/raz/touch_1.ogg",
+      "assets/voice/raz/touch_2.ogg",
+      "assets/voice/raz/touch_3.ogg"
+    ],
+    "level": {
+      "0": "assets/voice/raz/level_0.ogg",
+      "1": "assets/voice/raz/level_1.ogg",
+      "2": "assets/voice/raz/level_2.ogg",
+      "3": "assets/voice/raz/level_3.ogg",
+      "4": "assets/voice/raz/level_4.ogg",
+      "5": "assets/voice/raz/level_5.ogg",
+      "6": "assets/voice/raz/level_6.ogg",
+      "7": "assets/voice/raz/level_7.ogg",
+      "8": "assets/voice/raz/level_8.ogg",
+      "9": "assets/voice/raz/level_9.ogg",
+      "10": "assets/voice/raz/level_10.ogg",
+      "11": "assets/voice/raz/level_11.ogg",
+      "12": "assets/voice/raz/level_12.ogg",
+      "13": "assets/voice/raz/level_13.ogg"
+    },
+    "se": {
+      "5": [
+        "assets/voice/raz/se_111.ogg"
+      ],
+      "6": [
+        "assets/voice/raz/se_111.ogg"
+      ],
+      "7": [
+        "assets/voice/raz/se_111.ogg"
+      ],
+      "8": [
+        "assets/voice/raz/se_108.ogg",
+        "assets/voice/raz/se_109.ogg",
+        "assets/voice/raz/se_110.ogg"
+      ],
+      "9": [
+        "assets/voice/raz/se_108.ogg",
+        "assets/voice/raz/se_109.ogg",
+        "assets/voice/raz/se_110.ogg"
+      ],
+      "10": [
+        "assets/voice/raz/se_105.ogg",
+        "assets/voice/raz/se_106.ogg",
+        "assets/voice/raz/se_107.ogg"
+      ],
+      "11": [
+        "assets/voice/raz/se_105.ogg",
+        "assets/voice/raz/se_106.ogg",
+        "assets/voice/raz/se_107.ogg"
+      ],
+      "12": [
+        "assets/voice/raz/se_102.ogg",
+        "assets/voice/raz/se_103.ogg",
+        "assets/voice/raz/se_104.ogg"
+      ],
+      "13": [
+        "assets/voice/raz/se_100.ogg",
+        "assets/voice/raz/se_101.ogg"
+      ]
+    },
+    "sad_alt": [
+      "assets/voice/raz/sad_alt_119.ogg",
+      "assets/voice/raz/sad_alt_120.ogg"
+    ],
+    "rank": {
+      "rank_splus": "assets/voice/raz/rank_splus.ogg",
+      "rank_a": "assets/voice/raz/rank_a.ogg",
+      "rank_e": "assets/voice/raz/rank_e.ogg"
+    }
+  },
+  "chiffon": {
+    "meeting": [
+      "assets/voice/chiffon/meeting_1.ogg",
+      "assets/voice/chiffon/meeting_2.ogg",
+      "assets/voice/chiffon/meeting_3.ogg"
+    ],
+    "touch": [
+      "assets/voice/chiffon/touch_1.ogg",
+      "assets/voice/chiffon/touch_2.ogg",
+      "assets/voice/chiffon/touch_3.ogg"
+    ],
+    "level": {
+      "0": "assets/voice/chiffon/level_0.ogg",
+      "1": "assets/voice/chiffon/level_1.ogg",
+      "2": "assets/voice/chiffon/level_2.ogg",
+      "3": "assets/voice/chiffon/level_3.ogg",
+      "4": "assets/voice/chiffon/level_4.ogg",
+      "5": "assets/voice/chiffon/level_5.ogg",
+      "6": "assets/voice/chiffon/level_6.ogg",
+      "7": "assets/voice/chiffon/level_7.ogg",
+      "8": "assets/voice/chiffon/level_8.ogg",
+      "9": "assets/voice/chiffon/level_9.ogg",
+      "10": "assets/voice/chiffon/level_10.ogg",
+      "11": "assets/voice/chiffon/level_11.ogg",
+      "12": "assets/voice/chiffon/level_12.ogg",
+      "13": "assets/voice/chiffon/level_13.ogg"
+    },
+    "se": {
+      "5": [
+        "assets/voice/chiffon/se_111.ogg"
+      ],
+      "6": [
+        "assets/voice/chiffon/se_111.ogg"
+      ],
+      "7": [
+        "assets/voice/chiffon/se_111.ogg"
+      ],
+      "8": [
+        "assets/voice/chiffon/se_108.ogg",
+        "assets/voice/chiffon/se_109.ogg",
+        "assets/voice/chiffon/se_110.ogg"
+      ],
+      "9": [
+        "assets/voice/chiffon/se_108.ogg",
+        "assets/voice/chiffon/se_109.ogg",
+        "assets/voice/chiffon/se_110.ogg"
+      ],
+      "10": [
+        "assets/voice/chiffon/se_105.ogg",
+        "assets/voice/chiffon/se_106.ogg",
+        "assets/voice/chiffon/se_107.ogg"
+      ],
+      "11": [
+        "assets/voice/chiffon/se_105.ogg",
+        "assets/voice/chiffon/se_106.ogg",
+        "assets/voice/chiffon/se_107.ogg"
+      ],
+      "12": [
+        "assets/voice/chiffon/se_102.ogg",
+        "assets/voice/chiffon/se_103.ogg",
+        "assets/voice/chiffon/se_104.ogg"
+      ],
+      "13": [
+        "assets/voice/chiffon/se_100.ogg",
+        "assets/voice/chiffon/se_101.ogg"
+      ]
+    },
+    "sad_alt": [
+      "assets/voice/chiffon/sad_alt_119.ogg",
+      "assets/voice/chiffon/sad_alt_120.ogg"
+    ],
+    "rank": {
+      "rank_splus": "assets/voice/chiffon/rank_splus.ogg",
+      "rank_a": "assets/voice/chiffon/rank_a.ogg",
+      "rank_e": "assets/voice/chiffon/rank_e.ogg"
+    }
+  },
+  "salt": {
+    "meeting": [
+      "assets/voice/salt/meeting_1.ogg",
+      "assets/voice/salt/meeting_2.ogg",
+      "assets/voice/salt/meeting_3.ogg"
+    ],
+    "touch": [
+      "assets/voice/salt/touch_1.ogg",
+      "assets/voice/salt/touch_2.ogg",
+      "assets/voice/salt/touch_3.ogg"
+    ],
+    "level": {
+      "0": "assets/voice/salt/level_0.ogg",
+      "1": "assets/voice/salt/level_1.ogg",
+      "2": "assets/voice/salt/level_2.ogg",
+      "3": "assets/voice/salt/level_3.ogg",
+      "4": "assets/voice/salt/level_4.ogg",
+      "5": "assets/voice/salt/level_5.ogg",
+      "6": "assets/voice/salt/level_6.ogg",
+      "7": "assets/voice/salt/level_7.ogg",
+      "8": "assets/voice/salt/level_8.ogg",
+      "9": "assets/voice/salt/level_9.ogg",
+      "10": "assets/voice/salt/level_10.ogg",
+      "11": "assets/voice/salt/level_11.ogg",
+      "12": "assets/voice/salt/level_12.ogg",
+      "13": "assets/voice/salt/level_13.ogg"
+    },
+    "se": {
+      "5": [
+        "assets/voice/salt/se_111.ogg"
+      ],
+      "6": [
+        "assets/voice/salt/se_111.ogg"
+      ],
+      "7": [
+        "assets/voice/salt/se_111.ogg"
+      ],
+      "8": [
+        "assets/voice/salt/se_108.ogg",
+        "assets/voice/salt/se_109.ogg",
+        "assets/voice/salt/se_110.ogg"
+      ],
+      "9": [
+        "assets/voice/salt/se_108.ogg",
+        "assets/voice/salt/se_109.ogg",
+        "assets/voice/salt/se_110.ogg"
+      ],
+      "10": [
+        "assets/voice/salt/se_105.ogg",
+        "assets/voice/salt/se_106.ogg",
+        "assets/voice/salt/se_107.ogg"
+      ],
+      "11": [
+        "assets/voice/salt/se_105.ogg",
+        "assets/voice/salt/se_106.ogg",
+        "assets/voice/salt/se_107.ogg"
+      ],
+      "12": [
+        "assets/voice/salt/se_102.ogg",
+        "assets/voice/salt/se_103.ogg",
+        "assets/voice/salt/se_104.ogg"
+      ],
+      "13": [
+        "assets/voice/salt/se_100.ogg",
+        "assets/voice/salt/se_101.ogg"
+      ]
+    },
+    "sad_alt": [
+      "assets/voice/salt/sad_alt_119.ogg",
+      "assets/voice/salt/sad_alt_120.ogg"
+    ],
+    "rank": {
+      "rank_splus": "assets/voice/salt/rank_splus.ogg",
+      "rank_a": "assets/voice/salt/rank_a.ogg",
+      "rank_e": "assets/voice/salt/rank_e.ogg"
+    }
+  },
+  "otohime": {
+    "meeting": [
+      "assets/voice/otohime/meeting_1.ogg",
+      "assets/voice/otohime/meeting_2.ogg",
+      "assets/voice/otohime/meeting_3.ogg"
+    ],
+    "touch": [
+      "assets/voice/otohime/touch_1.ogg",
+      "assets/voice/otohime/touch_2.ogg",
+      "assets/voice/otohime/touch_3.ogg"
+    ],
+    "level": {
+      "0": "assets/voice/otohime/level_0.ogg",
+      "1": "assets/voice/otohime/level_1.ogg",
+      "2": "assets/voice/otohime/level_2.ogg",
+      "3": "assets/voice/otohime/level_3.ogg",
+      "4": "assets/voice/otohime/level_4.ogg",
+      "5": "assets/voice/otohime/level_5.ogg",
+      "6": "assets/voice/otohime/level_6.ogg",
+      "7": "assets/voice/otohime/level_7.ogg",
+      "8": "assets/voice/otohime/level_8.ogg",
+      "9": "assets/voice/otohime/level_9.ogg",
+      "10": "assets/voice/otohime/level_10.ogg",
+      "11": "assets/voice/otohime/level_11.ogg",
+      "12": "assets/voice/otohime/level_12.ogg",
+      "13": "assets/voice/otohime/level_13.ogg"
+    },
+    "se": {
+      "5": [
+        "assets/voice/otohime/se_111.ogg"
+      ],
+      "6": [
+        "assets/voice/otohime/se_111.ogg"
+      ],
+      "7": [
+        "assets/voice/otohime/se_111.ogg"
+      ],
+      "8": [
+        "assets/voice/otohime/se_108.ogg",
+        "assets/voice/otohime/se_109.ogg",
+        "assets/voice/otohime/se_110.ogg"
+      ],
+      "9": [
+        "assets/voice/otohime/se_108.ogg",
+        "assets/voice/otohime/se_109.ogg",
+        "assets/voice/otohime/se_110.ogg"
+      ],
+      "10": [
+        "assets/voice/otohime/se_105.ogg",
+        "assets/voice/otohime/se_106.ogg",
+        "assets/voice/otohime/se_107.ogg"
+      ],
+      "11": [
+        "assets/voice/otohime/se_105.ogg",
+        "assets/voice/otohime/se_106.ogg",
+        "assets/voice/otohime/se_107.ogg"
+      ],
+      "12": [
+        "assets/voice/otohime/se_102.ogg",
+        "assets/voice/otohime/se_103.ogg",
+        "assets/voice/otohime/se_104.ogg"
+      ],
+      "13": [
+        "assets/voice/otohime/se_100.ogg",
+        "assets/voice/otohime/se_101.ogg"
+      ]
+    },
+    "sad_alt": [
+      "assets/voice/otohime/sad_alt_119.ogg",
+      "assets/voice/otohime/sad_alt_120.ogg"
+    ],
+    "rank": {
+      "rank_splus": "assets/voice/otohime/rank_splus.ogg",
+      "rank_a": "assets/voice/otohime/rank_a.ogg",
+      "rank_e": "assets/voice/otohime/rank_e.ogg"
+    }
+  },
+  "shama": {
+    "meeting": [
+      "assets/voice/shama/meeting_1.ogg",
+      "assets/voice/shama/meeting_2.ogg",
+      "assets/voice/shama/meeting_3.ogg"
+    ],
+    "touch": [
+      "assets/voice/shama/touch_1.ogg",
+      "assets/voice/shama/touch_2.ogg",
+      "assets/voice/shama/touch_3.ogg"
+    ],
+    "level": {
+      "0": "assets/voice/shama/level_0.ogg",
+      "1": "assets/voice/shama/level_1.ogg",
+      "2": "assets/voice/shama/level_2.ogg",
+      "3": "assets/voice/shama/level_3.ogg",
+      "4": "assets/voice/shama/level_4.ogg",
+      "5": "assets/voice/shama/level_5.ogg",
+      "6": "assets/voice/shama/level_6.ogg",
+      "7": "assets/voice/shama/level_7.ogg",
+      "8": "assets/voice/shama/level_8.ogg",
+      "9": "assets/voice/shama/level_9.ogg",
+      "10": "assets/voice/shama/level_10.ogg",
+      "11": "assets/voice/shama/level_11.ogg",
+      "12": "assets/voice/shama/level_12.ogg",
+      "13": "assets/voice/shama/level_13.ogg"
+    },
+    "se": {
+      "5": [
+        "assets/voice/shama/se_111.ogg"
+      ],
+      "6": [
+        "assets/voice/shama/se_111.ogg"
+      ],
+      "7": [
+        "assets/voice/shama/se_111.ogg"
+      ],
+      "8": [
+        "assets/voice/shama/se_108.ogg",
+        "assets/voice/shama/se_109.ogg",
+        "assets/voice/shama/se_110.ogg"
+      ],
+      "9": [
+        "assets/voice/shama/se_108.ogg",
+        "assets/voice/shama/se_109.ogg",
+        "assets/voice/shama/se_110.ogg"
+      ],
+      "10": [
+        "assets/voice/shama/se_105.ogg",
+        "assets/voice/shama/se_106.ogg",
+        "assets/voice/shama/se_107.ogg"
+      ],
+      "11": [
+        "assets/voice/shama/se_105.ogg",
+        "assets/voice/shama/se_106.ogg",
+        "assets/voice/shama/se_107.ogg"
+      ],
+      "12": [
+        "assets/voice/shama/se_102.ogg",
+        "assets/voice/shama/se_103.ogg",
+        "assets/voice/shama/se_104.ogg"
+      ],
+      "13": [
+        "assets/voice/shama/se_100.ogg",
+        "assets/voice/shama/se_101.ogg"
+      ]
+    },
+    "sad_alt": [
+      "assets/voice/shama/sad_alt_119.ogg",
+      "assets/voice/shama/sad_alt_120.ogg"
+    ],
+    "rank": {
+      "rank_splus": "assets/voice/shama/rank_splus.ogg",
+      "rank_a": "assets/voice/shama/rank_a.ogg",
+      "rank_e": "assets/voice/shama/rank_e.ogg"
+    }
+  },
+  "milk": {
+    "meeting": [
+      "assets/voice/milk/meeting_1.ogg",
+      "assets/voice/milk/meeting_2.ogg",
+      "assets/voice/milk/meeting_3.ogg"
+    ],
+    "touch": [
+      "assets/voice/milk/touch_1.ogg",
+      "assets/voice/milk/touch_2.ogg",
+      "assets/voice/milk/touch_3.ogg"
+    ],
+    "level": {
+      "0": "assets/voice/milk/level_0.ogg",
+      "1": "assets/voice/milk/level_1.ogg",
+      "2": "assets/voice/milk/level_2.ogg",
+      "3": "assets/voice/milk/level_3.ogg",
+      "4": "assets/voice/milk/level_4.ogg",
+      "5": "assets/voice/milk/level_5.ogg",
+      "6": "assets/voice/milk/level_6.ogg",
+      "7": "assets/voice/milk/level_7.ogg",
+      "8": "assets/voice/milk/level_8.ogg",
+      "9": "assets/voice/milk/level_9.ogg",
+      "10": "assets/voice/milk/level_10.ogg",
+      "11": "assets/voice/milk/level_11.ogg",
+      "12": "assets/voice/milk/level_12.ogg",
+      "13": "assets/voice/milk/level_13.ogg"
+    },
+    "se": {
+      "5": [
+        "assets/voice/milk/se_111.ogg"
+      ],
+      "6": [
+        "assets/voice/milk/se_111.ogg"
+      ],
+      "7": [
+        "assets/voice/milk/se_111.ogg"
+      ],
+      "8": [
+        "assets/voice/milk/se_108.ogg",
+        "assets/voice/milk/se_109.ogg",
+        "assets/voice/milk/se_110.ogg"
+      ],
+      "9": [
+        "assets/voice/milk/se_108.ogg",
+        "assets/voice/milk/se_109.ogg",
+        "assets/voice/milk/se_110.ogg"
+      ],
+      "10": [
+        "assets/voice/milk/se_105.ogg",
+        "assets/voice/milk/se_106.ogg",
+        "assets/voice/milk/se_107.ogg"
+      ],
+      "11": [
+        "assets/voice/milk/se_105.ogg",
+        "assets/voice/milk/se_106.ogg",
+        "assets/voice/milk/se_107.ogg"
+      ],
+      "12": [
+        "assets/voice/milk/se_102.ogg",
+        "assets/voice/milk/se_103.ogg",
+        "assets/voice/milk/se_104.ogg"
+      ],
+      "13": [
+        "assets/voice/milk/se_100.ogg",
+        "assets/voice/milk/se_101.ogg"
+      ]
+    },
+    "sad_alt": [
+      "assets/voice/milk/sad_alt_119.ogg",
+      "assets/voice/milk/sad_alt_120.ogg"
+    ],
+    "rank": {
+      "rank_splus": "assets/voice/milk/rank_splus.ogg",
+      "rank_a": "assets/voice/milk/rank_a.ogg",
+      "rank_e": "assets/voice/milk/rank_e.ogg"
+    }
+  }
+}
