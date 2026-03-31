@@ -79,14 +79,25 @@ class VoiceManager {
         return { source, gain };
     }
 
+    _playSE(buf) {
+        this.stopSE();
+        this.currentSE = this._playBuf(buf);
+        const seSrc = this.currentSE.source;
+        seSrc.onended = () => {
+            if (this.currentSE?.source === seSrc) this.currentSE = null;
+        };
+    }
+
     play(charName, type) {
         this.stop();
+        this.stopSE();
         const bufs = this.buffers[charName];
         if (!bufs?.[type]?.length) return;
         const buf = bufs[type][Math.floor(Math.random() * bufs[type].length)];
         this.current = this._playBuf(buf);
-        this.current.source.onended = () => {
-            if (this.current?.source === this.current?.source) this.current = null;
+        const src = this.current.source;
+        src.onended = () => {
+            if (this.current?.source === src) this.current = null;
         };
     }
 
@@ -96,15 +107,19 @@ class VoiceManager {
         const bufs = this.buffers[charName];
         if (!bufs) return;
         const lvBuf = bufs.level[String(level)];
+        const seBufs = bufs.se[String(level)];
+        const seBuf = seBufs?.length
+            ? seBufs[Math.floor(Math.random() * seBufs.length)]
+            : null;
         if (lvBuf) {
             this.current = this._playBuf(lvBuf);
-            this.current.source.onended = () => { this.current = null; };
-        }
-        const seBufs = bufs.se[String(level)];
-        if (seBufs?.length) {
-            const se = seBufs[Math.floor(Math.random() * seBufs.length)];
-            this.currentSE = this._playBuf(se);
-            this.currentSE.source.onended = () => { this.currentSE = null; };
+            const src = this.current.source;
+            src.onended = () => {
+                if (this.current?.source === src) this.current = null;
+                if (seBuf) this._playSE(seBuf);
+            };
+        } else if (seBuf) {
+            this._playSE(seBuf);
         }
     }
 
@@ -364,24 +379,16 @@ class ScenePlayer {
                             ctx.globalAlpha = alpha;
                             const isolated = this.cropImages && this.cropImages.get(cropKey);
                             const cropPad = (this.cropPads && this.cropPads.get(cropKey)) || 0;
-                            const leftExt = (this.cropLeftExts && this.cropLeftExts.get(cropKey)) || 0;
                             const src = isolated || img;
                             const csx = isolated ? cropPad : sx;
                             const csy = isolated ? cropPad : sy;
-                            const drawSw = sw;
-                            const drawDw = dw;
-                            const drawPx = spr.px;
-                            const sampleX = csx;
-                            const sampleY = csy;
-                            const sampleW = drawSw;
-                            const sampleH = sh;
                             if (spr.fx) {
                                 ctx.save();
                                 ctx.scale(-1, 1);
-                                ctx.drawImage(src, sampleX, sampleY, sampleW, sampleH, drawPx - drawDw, -spr.py, drawDw, dh);
+                                ctx.drawImage(src, csx, csy, sw, sh, spr.px - dw, -spr.py, dw, dh);
                                 ctx.restore();
                             } else {
-                                ctx.drawImage(src, sampleX, sampleY, sampleW, sampleH, -drawPx, -spr.py, drawDw, dh);
+                                ctx.drawImage(src, csx, csy, sw, sh, -spr.px, -spr.py, dw, dh);
                             }
                             if (this._debug) {
                                 ctx.globalAlpha = 1;
@@ -413,28 +420,6 @@ class ScenePlayer {
             this.drawNode(ctx, ci, alpha, hidden);
         }
         ctx.restore();
-    }
-
-    computeVisualCenter() {
-        const root = this.scene.nodes[0];
-        const rx = root ? root.x : 0;
-        const ry = root ? root.y : 0;
-        if (rx !== 0 || ry !== 0) return { x: rx, y: ry };
-        const bounds = [];
-        const collectBounds = (idx, cx, cy) => {
-            const n = this.scene.nodes[idx];
-            if (!n || !n.v) return;
-            const x = cx + n.x, y = cy + n.y;
-            if (n.s && n.s.w * n.s.h > 1000) {
-                bounds.push({ x, y, area: n.s.w * n.s.h });
-            }
-            for (const ci of (n.ch || [])) collectBounds(ci, x, y);
-        };
-        collectBounds(0, 0, 0);
-        if (!bounds.length) return { x: 540, y: 540 };
-        let totalArea = 0, wx = 0, wy = 0;
-        for (const b of bounds) { wx += b.x * b.area; wy += b.y * b.area; totalArea += b.area; }
-        return { x: wx / totalArea, y: wy / totalArea };
     }
 
     render(ctx, tx, ty, scale) {
@@ -484,7 +469,6 @@ async function loadScene(path, opts = {}) {
     const images = [];
     const cropImages = new Map();
     const cropPads = new Map();
-    const cropLeftExts = new Map();
     const isolateCrops = opts.isolateCrops !== false;
     const cropPad = opts.cropPad === undefined ? 1 : Math.max(0, opts.cropPad | 0);
 
@@ -501,7 +485,6 @@ async function loadScene(path, opts = {}) {
             if (!crop || crop.length < 4) continue;
             const sw = crop[2] - crop[0], sh = crop[3] - crop[1];
             if (sw <= 0 || sh <= 0) continue;
-            const leftExt = 0;
             const c = document.createElement('canvas');
             c.width = sw + cropPad * 2;
             c.height = sh + cropPad * 2;
@@ -526,47 +509,8 @@ async function loadScene(path, opts = {}) {
     const player = new ScenePlayer(scene, images);
     player.cropImages = cropImages;
     player.cropPads = cropPads;
-    player.cropLeftExts = cropLeftExts;
     return player;
 }
-
-async function loadRawNodeNames(path) {
-    const r = await fetch(path);
-    if (!r.ok) return null;
-    const data = await r.json();
-    const chunks = data && data.chunks;
-    if (!Array.isArray(chunks)) return null;
-    const nodeChunk = chunks.find(c => (c.type || '').trim() === 'NODE');
-    if (!nodeChunk || !Array.isArray(nodeChunk.tags)) return null;
-
-    const names = [];
-    let record = [];
-    for (const tag of nodeChunk.tags) {
-        if (tag.id === 254) {
-            const nameTag = record.find(t => t.id === 3);
-            names.push(typeof nameTag?.value === 'string' ? nameTag.value : '');
-            record = [];
-            continue;
-        }
-        record.push(tag);
-    }
-    if (record.length) {
-        const nameTag = record.find(t => t.id === 3);
-        names.push(typeof nameTag?.value === 'string' ? nameTag.value : '');
-    }
-    return names;
-}
-
-async function loadRawNodeNamesByCandidates(paths) {
-    for (const p of paths) {
-        try {
-            const names = await loadRawNodeNames(p);
-            if (Array.isArray(names) && names.length) return names;
-        } catch (_) {}
-    }
-    return null;
-}
-
 
 class PartnerApp {
     constructor() {
@@ -847,28 +791,10 @@ class PartnerApp {
         }
     }
 
-    _attachRawNames(player, names) {
-        if (!player || !Array.isArray(player.nodes) || !Array.isArray(names)) return;
-        const n = Math.min(player.nodes.length, names.length);
-        for (let i = 0; i < n; i++) {
-            player.nodes[i]._name = names[i] || '';
-        }
-    }
-
     _patchMilkEffectAnims(player) {
         const happy = player.scene.animations['Action_Happy1'];
         if (happy && !happy.m.some(m => m.n === 291)) {
             happy.m.push({ n: 291, tr: [{ p: 24, t: 0, k: [[0, 0]] }] });
-        }
-    }
-
-    _patchMilkThirdLeg(player) {
-        if (!player || !Array.isArray(player.nodes)) return;
-        for (const node of player.nodes) {
-            const name = node._name || '';
-            if (name === 'Leg_R_2_Under' || name === 'Leg_L_2_Under' || name === '02_Leg_L_2_Under') {
-                node.v = 0;
-            }
         }
     }
 
@@ -1064,12 +990,6 @@ class PartnerApp {
         this.charRefPlayer = await loadScene(this.manifest.scenes.select_char);
         this.charRefPlayer.enableNameClip = false;
         this.charRefPlayer.cropTrimRights = new Map();
-        const selectRawNames = await loadRawNodeNamesByCandidates([
-            '/data_out/scenes/MM_UI_CharacterSelect__Reference_Character.json',
-            '../data_out/scenes/MM_UI_CharacterSelect__Reference_Character.json',
-            'data_out/scenes/MM_UI_CharacterSelect__Reference_Character.json',
-        ]);
-        this._attachRawNames(this.charRefPlayer, selectRawNames);
         updateProgress('char reference');
 
         const iconScenePath = this.manifest.scenes.select_icon;
@@ -1082,15 +1002,6 @@ class PartnerApp {
 
         for (const name of this.partners) {
             this.charPlayers[name] = await loadScene(this.manifest.scenes[name]);
-            if (name === 'milk') {
-                const milkRawNames = await loadRawNodeNamesByCandidates([
-                    '/data_out/scenes/MM_CH_Milk__Milk_00.json',
-                    '../data_out/scenes/MM_CH_Milk__Milk_00.json',
-                    'data_out/scenes/MM_CH_Milk__Milk_00.json',
-                ]);
-                this._attachRawNames(this.charPlayers[name], milkRawNames);
-                this._patchMilkThirdLeg(this.charPlayers[name]);
-            }
             updateProgress(name);
         }
 
@@ -1219,16 +1130,6 @@ class PartnerApp {
             }
             this.meetingTimer++;
             if (this.meetingTimer >= 240) this._endMeeting();
-        } else if (this.state === 'meeting_to_active') {
-            if (charPlayer) {
-                charPlayer.tick();
-                if (charName === 'milk') this._enforceMilkLegMask(charPlayer);
-            }
-            this.transitionFrame++;
-            if (this.transitionFrame >= this.transitionDuration) {
-                this.state = 'active';
-                if (charPlayer) charPlayer.clearByPrefix('Mouth_');
-            }
         } else if (this.state === 'active') {
             if (charPlayer) {
                 charPlayer.tick();
@@ -1284,9 +1185,6 @@ class PartnerApp {
             const t = this._charTransform();
             this._drawCharacter(t, 1);
             this._drawMeetingHUD();
-        } else if (this.state === 'meeting_to_active') {
-            const t = this._charTransform();
-            this._drawCharacter(t, 1);
         } else if (this.state === 'active') {
             const t = this._charTransform();
             this._drawCharacter(t, 1);

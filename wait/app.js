@@ -169,14 +169,6 @@ async function init() {
     ANIM_FADEIN = constData.ANIM_FADEIN;
     ANIM_ACTION = constData.ANIM_ACTION;
 
-    for (const anim of [ANIM_FADEIN, ANIM_ACTION]) {
-        for (const mot of anim.m) {
-            for (const trk of mot.tr) {
-                trk.t = H;
-            }
-        }
-    }
-
     texImg = await new Promise((resolve) => {
         const img = new Image();
         img.onload = () => resolve(img);
@@ -187,9 +179,11 @@ async function init() {
     for (const anim of [ANIM_FADEIN, ANIM_ACTION]) {
         for (const mot of anim.m) {
             let maxF = 0;
-            for (const trk of mot.tr)
+            for (const trk of mot.tr) {
+                trk.t = H;
                 for (const k of trk.k)
                     if (k[0] > maxF) maxF = k[0];
+            }
             mot._period = maxF || 0;
         }
     }
